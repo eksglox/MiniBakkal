@@ -13,6 +13,10 @@
 		55475643257F909C00C59E28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55475641257F909C00C59E28 /* Main.storyboard */; };
 		55475645257F909D00C59E28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55475644257F909D00C59E28 /* Assets.xcassets */; };
 		55475648257F909D00C59E28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55475646257F909D00C59E28 /* LaunchScreen.storyboard */; };
+		55475651257F942D00C59E28 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55475650257F942D00C59E28 /* CustomCollectionViewCell.swift */; };
+		55B46931257FB1670058667D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B46930257FB1670058667D /* DataModel.swift */; };
+		55B46938258008340058667D /* SepetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B46937258008340058667D /* SepetViewController.swift */; };
+		55B4693B25801FF70058667D /* SepetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B4693A25801FF70058667D /* SepetCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		55475644257F909D00C59E28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55475647257F909D00C59E28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55475649257F909D00C59E28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55475650257F942D00C59E28 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		55B46930257FB1670058667D /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		55B46937258008340058667D /* SepetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetViewController.swift; sourceTree = "<group>"; };
+		55B4693A25801FF70058667D /* SepetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +64,13 @@
 		5547563A257F909C00C59E28 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				5547563B257F909C00C59E28 /* AppDelegate.swift */,
+				55B46930257FB1670058667D /* DataModel.swift */,
 				5547563D257F909C00C59E28 /* SceneDelegate.swift */,
 				5547563F257F909C00C59E28 /* ViewController.swift */,
+				55B46937258008340058667D /* SepetViewController.swift */,
+				55475650257F942D00C59E28 /* CustomCollectionViewCell.swift */,
+				55B4693A25801FF70058667D /* SepetCollectionViewCell.swift */,
+				5547563B257F909C00C59E28 /* AppDelegate.swift */,
 				55475641257F909C00C59E28 /* Main.storyboard */,
 				55475644257F909D00C59E28 /* Assets.xcassets */,
 				55475646257F909D00C59E28 /* LaunchScreen.storyboard */,
@@ -137,9 +149,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55B4693B25801FF70058667D /* SepetCollectionViewCell.swift in Sources */,
+				55B46931257FB1670058667D /* DataModel.swift in Sources */,
 				55475640257F909C00C59E28 /* ViewController.swift in Sources */,
+				55B46938258008340058667D /* SepetViewController.swift in Sources */,
 				5547563C257F909C00C59E28 /* AppDelegate.swift in Sources */,
 				5547563E257F909C00C59E28 /* SceneDelegate.swift in Sources */,
+				55475651257F942D00C59E28 /* CustomCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
