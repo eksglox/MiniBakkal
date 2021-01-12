@@ -21,10 +21,19 @@ class ViewController: UIViewController {
     let badgeTag = 12
     var badgeCount = UILabel()
     var totalCountForBadge = 0
+    var storeArr = [urunModel]()
+//    var storeArr = [urunModel](){
+//        didSet{
+//            DispatchQueue.main.async {
+//                self.mainCollectionView.reloadData()
+//            }
+//        }
+//    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getData()
        
     }
@@ -43,7 +52,6 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let sepetVC = segue.destination as! SepetViewController
-        
         sepetVC.genelUrunlerArr = ViewController.urunlerArr
     }
     
@@ -60,31 +68,24 @@ class ViewController: UIViewController {
     // MARK: GET DATA FROM URL..
     func getData(){
         
-        let url = URL(string: "https://desolate-shelf-18786.herokuapp.com/list")
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            
-            if error == nil{
-                
-                do{
-                    ViewController.urunlerArr = try JSONDecoder().decode([urunModel].self, from: data!)
-                }catch{
-                    print("sorun var ")
-                }
-                
+        let requestMethod = ApiConnectorTwo()
+        requestMethod.getStructData { [weak self] result in
+            switch result{
+            case .failure(let error):
+                print(error)
+            case .success(let arr):
+                self?.storeArr = arr
                 DispatchQueue.main.async {
-                    print(ViewController.urunlerArr)
-                    self.mainCollectionView.reloadData()
+                    self?.mainCollectionView.reloadData()
                 }
             }
-            
-        }.resume()
-        
-        
+        }
+  
     }
     
     
 
-    //MARK: URUN EKLEME VE CIKARMA FONKSIYONLARI..
+    //MARK: -URUN EKLEME VE CIKARMA FONKSIYONLARI..
     
     @objc func ekleAction(sender: UIButton){
         let indexPath = IndexPath(row: sender.tag, section: 0)
@@ -162,7 +163,7 @@ class ViewController: UIViewController {
         
     }
     
-    //MARK: BADGE BOLUMU:
+    //MARK: -BADGE BOLUMU:
     func badgeLabel(count: Int) -> UILabel {
         badgeCount = UILabel(frame: CGRect(x: 0, y: 0, width: badgeSize, height: badgeSize))
         badgeCount.tag = badgeTag
@@ -190,19 +191,18 @@ class ViewController: UIViewController {
     
 }
 
-// MARK: MAIN VIEWCONTROLLER DELEGATES..
+// MARK: -MAIN VIEWCONTROLLER DELEGATES..
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ViewController.urunlerArr.count
+        return storeArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
-        cell.urunAdiLabel.text = ViewController.urunlerArr[indexPath.row].name
-        cell.fiyatLabel.text = "₺" + String(ViewController.urunlerArr[indexPath.row].price)
-        cell.productImageView.downloaded(from: ViewController.urunlerArr[indexPath.row].imageUrl)
-        
+        cell.urunAdiLabel.text = storeArr[indexPath.row].name
+        cell.fiyatLabel.text = "₺" + String(storeArr[indexPath.row].price)
+        cell.productImageView.downloaded(from: storeArr[indexPath.row].imageUrl)
         var adetCount = 0
         cell.adetLabel.text = String(adetCount)
         cell.urunCikarButton.isHidden = true
@@ -219,7 +219,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
 
 
 
-// MARK: TURN URL TO IMAGE EXTENSION..
+// MARK: -TURN URL TO IMAGE EXTENSION..
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode

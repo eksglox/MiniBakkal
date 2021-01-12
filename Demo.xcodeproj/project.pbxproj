@@ -17,6 +17,7 @@
 		55B46931257FB1670058667D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B46930257FB1670058667D /* DataModel.swift */; };
 		55B46938258008340058667D /* SepetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B46937258008340058667D /* SepetViewController.swift */; };
 		55B4693B25801FF70058667D /* SepetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B4693A25801FF70058667D /* SepetCollectionViewCell.swift */; };
+		55C622002591F9430035FD2F /* APImanager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C621FF2591F9430035FD2F /* APImanager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		55B46930257FB1670058667D /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		55B46937258008340058667D /* SepetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetViewController.swift; sourceTree = "<group>"; };
 		55B4693A25801FF70058667D /* SepetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SepetCollectionViewCell.swift; sourceTree = "<group>"; };
+		55C621FF2591F9430035FD2F /* APImanager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APImanager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				55475650257F942D00C59E28 /* CustomCollectionViewCell.swift */,
 				55B4693A25801FF70058667D /* SepetCollectionViewCell.swift */,
 				5547563B257F909C00C59E28 /* AppDelegate.swift */,
+				55C621FF2591F9430035FD2F /* APImanager.swift */,
 				55475641257F909C00C59E28 /* Main.storyboard */,
 				55475644257F909D00C59E28 /* Assets.xcassets */,
 				55475646257F909D00C59E28 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C622002591F9430035FD2F /* APImanager.swift in Sources */,
 				55B4693B25801FF70058667D /* SepetCollectionViewCell.swift in Sources */,
 				55B46931257FB1670058667D /* DataModel.swift in Sources */,
 				55475640257F909C00C59E28 /* ViewController.swift in Sources */,
